@@ -5,8 +5,7 @@ MAINTAINER Alex Myasoedov <msoedov@gmail.com>
 ENV WORKDIR  /pyflame/
 WORKDIR $WORKDIR
 RUN apt-get update
-RUN apt-get install autoconf automake autotools-dev g++ libtool pkg-config -y && rm -rf /var/lib/apt/lists/*
-
+RUN apt-get install autoconf automake autotools-dev g++ pkg-config python-dev python3-dev libtool make -y
 RUN git clone https://github.com/uber/pyflame.git .
 RUN ./autogen.sh
 RUN ./configure
